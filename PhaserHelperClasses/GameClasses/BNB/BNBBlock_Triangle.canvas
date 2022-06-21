@@ -1,0 +1,155 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "BNBBlock_Triangle",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Group",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.afterCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "3e779103-d8af-4182-b145-a3039ec1735a",
+    "info": {
+      "editorName": "BNBBlock_Triangle",
+      "setAll": [],
+      "children": [{
+        "type": "group",
+        "id": "c4cee12c-e6cc-4c60-a76e-df334f69a505",
+        "info": {
+          "editorName": "group",
+          "setAll": [],
+          "children": [{
+            "type": "group",
+            "id": "c81bab27-9788-40d9-8ee4-8666ef1c488c",
+            "info": {
+              "editorName": "_visualParent",
+              "editorField": true,
+              "setAll": [],
+              "children": [
+                {
+                  "type": "image",
+                  "id": "66dae61a-87ee-41c1-9a73-1327fa3f8a53",
+                  "asset": "0",
+                  "info": {
+                    "editorName": "_shadow",
+                    "editorField": true,
+                    "y": 5,
+                    "scale.x": 0,
+                    "scale.y": 0,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "79c9a23a-1fa8-4ef7-8e55-d9e42004cbdc",
+                  "asset": "1",
+                  "info": {
+                    "editorName": "_visual",
+                    "editorField": true,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "03afa59a-055b-4d25-869a-e9227302fbcf",
+                  "asset": "0",
+                  "info": {
+                    "editorName": "_flash",
+                    "editorField": true,
+                    "scale.x": 0,
+                    "scale.y": 0,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "3801dd7f-494b-4725-8bf8-3cbb31302925",
+                  "asset": "2",
+                  "info": {
+                    "editorName": "_highlight",
+                    "editorField": true,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "atlas-sprite",
+                  "id": "58aa3adc-f97a-453f-aa83-181d14329842",
+                  "asset": "3",
+                  "info": {
+                    "editorName": "_anim",
+                    "editorField": true,
+                    "y": 25,
+                    "scale.x": 0.6,
+                    "scale.y": 0.6,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5,
+                    "animations": [{
+                      "name": "destroy",
+                      "frameRate": 24,
+                      "frames": []
+                    }]
+                  }
+                }
+              ]
+            }
+          }]
+        }
+      }]
+    }
+  },
+  "type": "GROUP",
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "square"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "Sand Block White Triangle 2"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "Highlighted Triangle Block 1"
+    },
+    "3": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "sandBlockAtlas2",
+      "sprite": "Triangle Block 2 Melt (Grayscale)/Triangle Melt 1.png"
+    }
+  },
+  "prefab-table": {}
+}

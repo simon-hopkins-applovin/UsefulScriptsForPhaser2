@@ -1,0 +1,123 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Card",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Group",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "fd915a6e-8695-4bea-b1c6-536f9a5d3f87",
+    "info": {
+      "editorName": "Card",
+      "setAll": [],
+      "children": [{
+        "type": "group",
+        "id": "09cb4f4f-2472-436c-83ac-65e85734bf1d",
+        "info": {
+          "editorName": "group",
+          "setAll": [],
+          "children": [{
+            "type": "group",
+            "id": "223a5440-20f0-48c8-846a-5cb77e1a9252",
+            "info": {
+              "editorName": "_visualParent",
+              "editorField": true,
+              "setAll": [],
+              "children": [
+                {
+                  "type": "prefab",
+                  "prefab": "0",
+                  "id": "58355391-fed4-4f52-8385-dd354fc3627a",
+                  "info": {
+                    "editorName": "_debugText",
+                    "x": -47,
+                    "y": -80
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "b23e8eec-4dae-4ca3-a1da-7736152c981e",
+                  "asset": "0",
+                  "info": {
+                    "editorName": "_frontVisual",
+                    "editorField": true,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "0bd9a0b7-ac93-4b69-b107-c378ab316484",
+                  "asset": "1",
+                  "info": {
+                    "editorName": "_backVisual",
+                    "editorField": true,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "7f0eb720-0cb4-4f22-907f-f185c9bde4eb",
+                  "asset": "2",
+                  "info": {
+                    "editorName": "_glow",
+                    "editorField": true,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                }
+              ]
+            }
+          }]
+        }
+      }]
+    }
+  },
+  "type": "GROUP",
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "PlayableTemplate",
+      "asset": "4 of Hearts"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "PlayableTemplate",
+      "asset": "Blue Card Back"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "PlayableTemplate",
+      "asset": "Card Glow"
+    }
+  },
+  "prefab-table": {"0": "WebContent/BaseTemplate/webfontGEOText.canvas"}
+}
