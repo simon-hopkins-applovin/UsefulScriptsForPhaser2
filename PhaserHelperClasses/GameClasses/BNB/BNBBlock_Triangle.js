@@ -24,17 +24,17 @@ function BNBBlock_Triangle(aGame, aParent, aName, aAddToStage, aEnableBody, aPhy
 	__shadow.scale.set(0.0, 0.0);
 	__shadow.anchor.set(0.5, 0.5);
 	
-	var __visual = this.game.add.sprite(0.0, 0.0, 'Sand Block White Triangle 2', null, __visualParent);
+	var __visual = this.game.add.sprite(0.0, 0.0, 'square', null, __visualParent);
 	__visual.anchor.set(0.5, 0.5);
 	
 	var __flash = this.game.add.sprite(0.0, 0.0, 'square', null, __visualParent);
 	__flash.scale.set(0.0, 0.0);
 	__flash.anchor.set(0.5, 0.5);
 	
-	var __highlight = this.game.add.sprite(0.0, 0.0, 'Highlighted Triangle Block 1', null, __visualParent);
+	var __highlight = this.game.add.sprite(0.0, 0.0, 'square', null, __visualParent);
 	__highlight.anchor.set(0.5, 0.5);
 	
-	var __anim = this.game.add.sprite(0.0, 25.0, 'sandBlockAtlas2', 'Triangle Block 2 Melt (Grayscale)/Triangle Melt 1.png', __visualParent);
+	var __anim = this.game.add.sprite(0.0, 25.0, 'square', null, __visualParent);
 	__anim.scale.set(0.6, 0.6);
 	__anim.anchor.set(0.5, 0.5);
 	__anim.animations.add('destroy', [], 24, false);

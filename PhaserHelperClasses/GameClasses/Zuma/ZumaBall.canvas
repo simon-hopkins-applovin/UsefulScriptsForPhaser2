@@ -54,8 +54,8 @@
                 "setAll": [],
                 "children": [
                   {
-                    "type": "atlas-sprite",
-                    "id": "b1ae844f-68e0-465e-afd6-e1d69153f341",
+                    "type": "image",
+                    "id": "a607c512-63cd-4c02-8f85-157d468ffc7e",
                     "asset": "0",
                     "info": {
                       "editorName": "_baseVisual",
@@ -67,9 +67,9 @@
                     }
                   },
                   {
-                    "type": "atlas-sprite",
-                    "id": "6aa319a0-8d50-46a3-9437-9c507faa4d0a",
-                    "asset": "1",
+                    "type": "image",
+                    "id": "d9831be2-00ce-43eb-8d87-5a9afbad3b34",
+                    "asset": "0",
                     "info": {
                       "editorName": "_glowVisual",
                       "editorField": true,
@@ -80,9 +80,9 @@
                     }
                   },
                   {
-                    "type": "atlas-sprite",
-                    "id": "a40bebc4-c347-4d9c-be1a-e4189c018057",
-                    "asset": "2",
+                    "type": "image",
+                    "id": "6b84df21-5347-4976-9813-d3a58316d436",
+                    "asset": "0",
                     "info": {
                       "editorName": "_overlay",
                       "editorField": true,
@@ -111,25 +111,10 @@
     }
   },
   "type": "GROUP",
-  "asset-table": {
-    "0": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "helperClassAtlas",
-      "sprite": "ball_blue.png"
-    },
-    "1": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "helperClassAtlas",
-      "sprite": "ball_blue_high.png"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "helperClassAtlas",
-      "sprite": "ball_white.png"
-    }
-  },
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "playableAssets",
+    "asset": "square"
+  }},
   "prefab-table": {"0": "WebContent/BaseTemplate/webfontGEOText.canvas"}
 }

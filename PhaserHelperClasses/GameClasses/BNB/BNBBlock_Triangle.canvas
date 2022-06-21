@@ -68,8 +68,8 @@
                 },
                 {
                   "type": "image",
-                  "id": "79c9a23a-1fa8-4ef7-8e55-d9e42004cbdc",
-                  "asset": "1",
+                  "id": "e9713f9d-1daf-4731-a3dc-2258d52f1972",
+                  "asset": "0",
                   "info": {
                     "editorName": "_visual",
                     "editorField": true,
@@ -92,8 +92,8 @@
                 },
                 {
                   "type": "image",
-                  "id": "3801dd7f-494b-4725-8bf8-3cbb31302925",
-                  "asset": "2",
+                  "id": "592751b6-4033-4461-b8a5-2a98ec51a9f3",
+                  "asset": "0",
                   "info": {
                     "editorName": "_highlight",
                     "editorField": true,
@@ -102,9 +102,9 @@
                   }
                 },
                 {
-                  "type": "atlas-sprite",
-                  "id": "58aa3adc-f97a-453f-aa83-181d14329842",
-                  "asset": "3",
+                  "type": "image",
+                  "id": "e858242e-b5cb-4212-8503-5e604cc974bb",
+                  "asset": "0",
                   "info": {
                     "editorName": "_anim",
                     "editorField": true,
@@ -128,28 +128,10 @@
     }
   },
   "type": "GROUP",
-  "asset-table": {
-    "0": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "square"
-    },
-    "1": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "Sand Block White Triangle 2"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "Highlighted Triangle Block 1"
-    },
-    "3": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "sandBlockAtlas2",
-      "sprite": "Triangle Block 2 Melt (Grayscale)/Triangle Melt 1.png"
-    }
-  },
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "playableAssets",
+    "asset": "square"
+  }},
   "prefab-table": {}
 }

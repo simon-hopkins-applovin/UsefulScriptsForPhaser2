@@ -63,7 +63,7 @@
                 },
                 {
                   "type": "image",
-                  "id": "b23e8eec-4dae-4ca3-a1da-7736152c981e",
+                  "id": "90cf1415-d88f-4e40-8746-89711cba8c84",
                   "asset": "0",
                   "info": {
                     "editorName": "_frontVisual",
@@ -74,8 +74,8 @@
                 },
                 {
                   "type": "image",
-                  "id": "0bd9a0b7-ac93-4b69-b107-c378ab316484",
-                  "asset": "1",
+                  "id": "17e8a530-3a90-4343-a9df-85d4eb36743a",
+                  "asset": "0",
                   "info": {
                     "editorName": "_backVisual",
                     "editorField": true,
@@ -85,8 +85,8 @@
                 },
                 {
                   "type": "image",
-                  "id": "7f0eb720-0cb4-4f22-907f-f185c9bde4eb",
-                  "asset": "2",
+                  "id": "6ba0ba07-15c2-463c-9c89-ae1d79e6cdaf",
+                  "asset": "0",
                   "info": {
                     "editorName": "_glow",
                     "editorField": true,
@@ -102,22 +102,10 @@
     }
   },
   "type": "GROUP",
-  "asset-table": {
-    "0": {
-      "file": "WebContent/assets/pack.json",
-      "section": "PlayableTemplate",
-      "asset": "4 of Hearts"
-    },
-    "1": {
-      "file": "WebContent/assets/pack.json",
-      "section": "PlayableTemplate",
-      "asset": "Blue Card Back"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "PlayableTemplate",
-      "asset": "Card Glow"
-    }
-  },
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "playableAssets",
+    "asset": "square"
+  }},
   "prefab-table": {"0": "WebContent/BaseTemplate/webfontGEOText.canvas"}
 }

@@ -69,8 +69,8 @@
                 },
                 {
                   "type": "image",
-                  "id": "b312c8da-da93-4fb2-a2bb-91363b03cf6b",
-                  "asset": "1",
+                  "id": "03afa7f7-2be1-4fe4-b107-d090d5db79ee",
+                  "asset": "0",
                   "info": {
                     "editorName": "_visual",
                     "editorField": true,
@@ -94,8 +94,8 @@
                 },
                 {
                   "type": "image",
-                  "id": "d2c7b09f-f368-4404-b544-6aa30d197e47",
-                  "asset": "2",
+                  "id": "f7d9c288-64f1-406f-a112-ce42dcd5ab43",
+                  "asset": "0",
                   "info": {
                     "editorName": "_highlight",
                     "editorField": true,
@@ -104,9 +104,9 @@
                   }
                 },
                 {
-                  "type": "atlas-sprite",
-                  "id": "89a04ec8-a497-4b6e-b55a-8633cd67ef45",
-                  "asset": "3",
+                  "type": "image",
+                  "id": "17963957-d4db-49d1-86f5-2299c8821a94",
+                  "asset": "0",
                   "info": {
                     "editorName": "_anim",
                     "editorField": true,
@@ -130,28 +130,10 @@
     }
   },
   "type": "GROUP",
-  "asset-table": {
-    "0": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "square"
-    },
-    "1": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "Sand Block White 3"
-    },
-    "2": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "Highlighted Block"
-    },
-    "3": {
-      "file": "WebContent/assets/pack.json",
-      "section": "playableAssets",
-      "asset": "sandBlockAtlas2",
-      "sprite": "Sand Melt Animation (Grayscale)/Sand Melt 1.png"
-    }
-  },
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "playableAssets",
+    "asset": "square"
+  }},
   "prefab-table": {}
 }
