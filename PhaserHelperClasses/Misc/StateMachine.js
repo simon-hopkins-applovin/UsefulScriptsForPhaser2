@@ -1,10 +1,11 @@
 //State Machine
 //	(つ . •́ _ʖ •̀ .)つ
 function StateMachine(_states){
-	this.states = _states;
-	for(entry in this.states){
-		this.states[entry].enterFired = false;
-		this.states[entry].name = entry;
+	this.states = {};
+	for(var i = 0; i< arguments.length; i++){
+		this.states[arguments[i]] = new State();
+		this.states[arguments[i]].enterFired = false;
+		this.states[arguments[i]].name = entry;
 	}
 	this.onUpdateSignal = new Phaser.Signal();
 	this.currentState = null;
