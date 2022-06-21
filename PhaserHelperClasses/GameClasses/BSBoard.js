@@ -78,6 +78,10 @@ function BSBoard (_game, _boardBacking, _trayBacking) {
 	this.boardArr = [];
 	//init vars
 	this.trayBlocks = [];
+	
+	
+	//this.SM = new StateMachine()
+	
 }
 
 
@@ -131,9 +135,12 @@ BSBoard.prototype.initialize = function(rows, cols, _initTrayData, _blocksParent
 	
 };
 
+BSBoard.prototype.initSM = function(){
+	
+}
+
 //only if a new puzzle has the same board dims, if not, just make another BS Board object
 //this reuses the objects we initialized in BSBoard.prototype.initialize
-
 BSBoard.prototype.renderBoard = function(_boardData, color, animate){
 	
 	var getColor = function(char){
@@ -469,7 +476,7 @@ BSBoard.prototype.shiftTrayQueue = function(generateRandom, color, parent, onCre
 	newBlock.basePos.x += Global.cameraOffsetX;
 	newBlock.basePos.y += Global.cameraOffsetY;
 	
-	newBlock.parent.position.setTo(newBlock.basePos.x, newBlock.basePos.y);
+	newBlock.position.setTo(newBlock.basePos.x, newBlock.basePos.y);
 	
 	newBlock.initMouseDown(this.blockClickCallback.bind(this));
 	newBlock.initShowGlow(this.showGlow, this.hideGlow, this);
@@ -481,16 +488,16 @@ BSBoard.prototype.shiftTrayQueue = function(generateRandom, color, parent, onCre
 	}
 	//anim
 	newBlock.SM.changeState("SPAWNING");
-	newBlock.parent.scale.setTo(0);
+	newBlock.scale.setTo(0);
 	if(doAnimate){
-		newBlock.spawnTween = this.game.add.tween(newBlock.parent.scale).to({x: newBlock.trayScale.x, y: newBlock.trayScale.y}, 300, Phaser.Easing.Back.Out, true);
+		newBlock.spawnTween = this.game.add.tween(newBlock.scale).to({x: newBlock.trayScale.x, y: newBlock.trayScale.y}, 300, Phaser.Easing.Back.Out, true);
 		newBlock.spawnTween.onComplete.add(function(){
 			if(newBlock.SM.checkState("SPAWNING")){
 				newBlock.SM.changeState("RESTING");
 			}
 		}, this);
 	}else{
-		newBlock.parent.scale.setTo(newBlock.trayScale.x, newBlock.trayScale.y);
+		newBlock.scale.setTo(newBlock.trayScale.x, newBlock.trayScale.y);
 		newBlock.SM.changeState("RESTING");
 	}
 	
@@ -553,7 +560,7 @@ BSBoard.prototype.resetTray = function(newTrayQueue){
 			return;
 		}
 		this.clearTrayOfPiece(trayPiece);
-		trayPiece.parent.destroy();
+		trayPiece.destroy();
 	}, this);
 	this.trayQueue = newTrayQueue || [];
 };
@@ -697,17 +704,18 @@ BSBoard.prototype.getPieceFitCoord = function(){
 
 function Block(_game, _blockArr, _color, _cellSize, _trayScale, _parent){
 	this.game = _game;
+	Phaser.Group.call(this, _game, _parent)
 	this.blockArr = Util.deepCopyObject(_blockArr);
 	this.color = _color;
 	this.cellSize = _cellSize;
 	this.trayScale = new Phaser.Point(_trayScale, _trayScale);
-	this.parent = this.game.add.group(_parent);
+
 	this.rows = this.blockArr.length;
 	this.cols = this.blockArr[0].length;
 	this.bounds = new Phaser.Rectangle(0,0,this.cols*this.cellSize, this.rows*this.cellSize);
 	this.bounds.centerOn(0,0);
 	this.blockMap = new Map();
-	this.blockScale = new Phaser.Point();
+	this.blockScale = new Phaser.Point(1,1);
 	this.SM = new StateMachine({
 		SPAWNING: new State(),
 		RESTING: new State(),
@@ -722,31 +730,25 @@ function Block(_game, _blockArr, _color, _cellSize, _trayScale, _parent){
 			if(this.blockArr[row][col]== " "){
 				continue;
 			}
-			var cellData = {};
 			var centerX = Phaser.Math.linear(this.bounds.left, this.bounds.right, (col+0.5)/this.cols);
 			var centerY = Phaser.Math.linear(this.bounds.top, this.bounds.bottom, (row+0.5)/this.rows);
-			cellData.baseSprite = this.game.add.sprite(centerX, centerY, this.color + " block", 0, this.parent, 0.5, 0.5);
-			cellData.blockScale = this.cellSize/cellData.baseSprite.width;
-			this.blockScale.setTo(cellData.blockScale);
-			cellData.glowSprite = this.game.add.sprite(centerX, centerY, "glow", 0, this.parent, 0.5, 0.5);
-			cellData.glowSprite.blendMode = PIXI.blendModes.ADD;
-			cellData.glowSprite.alpha = 0;
-			cellData.isGlowing = false;
-			cellData.spawnCircle = new Phaser.Circle(centerX, centerY,this.cellSize);
-			cellData.offset = {row: row, col: col};
-			cellData.parent = this.parent;
-			this.blockMap.set(Util.cantorPair(row, col), cellData);
-			
-			cellData.baseSprite.scale.setTo(cellData.blockScale);
-			cellData.glowSprite.scale.setTo(cellData.blockScale);
-			
+
+			var cell = new BSBlock(this.game, this);
+			cell.resizeWithWidth(this.cellSize*1.25);
+			cell.position.setTo(centerX, centerY);
+			cell.spawnCircle = new Phaser.Circle(cell.x, cell.y,this.cellSize);
+			cell.offset = {row: row, col: col};
+			this.blockMap.set(Util.cantorPair(row, col), cell);
 			
 		};
 	}
-	this.parent.scale.setTo(0.5);
+	this.scale.setTo(0.5);
 	this.SM.changeState("RESTING");
-	this.parent.sort('y', Phaser.Group.SORT_DESCENDING);
+	this.sort('y', Phaser.Group.SORT_DESCENDING);
 }
+
+Block.prototype = Object.create(Phaser.Group.prototype);
+Block.prototype.constructor = Block;
 
 Block.prototype.initShowGlow = function(_showGlow, _hideGlow, context){
 	
@@ -754,6 +756,7 @@ Block.prototype.initShowGlow = function(_showGlow, _hideGlow, context){
 		
 		value.showGlow = _showGlow?_showGlow.bind(context, value, new Phaser.Point(value.baseSprite.x,value.baseSprite.y), value.parent):_showGlow;
 		value.hideGlow =_hideGlow?_hideGlow.bind(context, value, new Phaser.Point(value.baseSprite.x,value.baseSprite.y), value.parent):_hideGlow;
+		
 	}, this);
 	
 }
@@ -775,29 +778,26 @@ Block.prototype.hideGlow = function(){
 		
 	}, this);
 }
-Block.prototype.bringToTop = function(){
-	this.parent.parent.bringToTop(this.parent);
 
-}
 Block.prototype.initBlockSM = function(){
 	
 	var mouseOffset = new Phaser.Point();
 	var targetScale = this.trayScale;
 	var thetaMod = 5;
 	var scalePosTheta = 1;
-	var startScale = this.parent.scale.clone();
-	var startPos = this.parent.position.clone();
+	var startScale = this.scale.clone();
+	var startPos = this.position.clone();
 	this.SM.states.RESTING.onEnter.add(function(data){
 		
 	}, this);
 	
 	var updateScale = function(tweenFunction){
-		this.parent.scale = Phaser.Point.interpolate(startScale, targetScale, tweenFunction.call(this, scalePosTheta));
+		this.scale = Phaser.Point.interpolate(startScale, targetScale, tweenFunction.call(this, scalePosTheta));
 		
 		
 	};
 	var updatePos = function(targetPos, tweenFunction){
-		this.parent.position = Phaser.Point.interpolate(startPos, targetPos, tweenFunction.call(this, scalePosTheta));
+		this.position = Phaser.Point.interpolate(startPos, targetPos, tweenFunction.call(this, scalePosTheta));
 		
 	};
 	//we want to update the scale in these two states;
@@ -809,11 +809,11 @@ Block.prototype.initBlockSM = function(){
 	
 	
 	this.SM.states.DRAG.onEnter.add(function(data){
-		this.bringToTop();
+		
 		scalePosTheta = 0;
 		mouseOffset = data.mouseOffset.clone();
-		startScale = this.parent.scale.clone();
-		startPos = this.parent.position.clone();
+		startScale = this.scale.clone();
+		startPos = this.position.clone();
 		targetScale = new Phaser.Point(1, 1);
 	}, this);
 	this.SM.states.DRAG.onUpdate.add(function(data){
@@ -821,7 +821,7 @@ Block.prototype.initBlockSM = function(){
 		scalePosTheta = Math.min(1,scalePosTheta);
 		var mousePos = new Phaser.Point(this.game.input.activePointer.x + Global.cameraOffsetX, this.game.input.activePointer.y + Global.cameraOffsetY);
 		var targetPos = new Phaser.Point(mousePos.x + mouseOffset.x, mousePos.y + mouseOffset.y);
-		this.parent.position = Phaser.Point.interpolate(this.parent.position, targetPos, this.game.time.physicsElapsed*20);
+		this.position = Phaser.Point.interpolate(this.position, targetPos, this.game.time.physicsElapsed*20);
 		updateScale.call(this, Phaser.Easing.Back.Out);
 		
 	}, this);
@@ -832,8 +832,8 @@ Block.prototype.initBlockSM = function(){
 		scalePosTheta = 0;
 		targetScale = this.trayScale;
 
-		startScale = this.parent.scale.clone();
-		startPos = this.parent.position.clone();
+		startScale = this.scale.clone();
+		startPos = this.position.clone();
 	}, this);
 	
 	this.SM.states.RETURNING.onUpdate.add(function(data){
@@ -861,7 +861,7 @@ Block.prototype.initMouseDown = function(callback){
 };
 
 Block.prototype.getUpperLeft = function(){
-	return new Phaser.Point(this.bounds.left + this.parent.x + this.cellSize/2, this.bounds.top + this.parent.y + this.cellSize/2);
+	return new Phaser.Point(this.bounds.left + this.x + this.cellSize/2, this.bounds.top + this.y + this.cellSize/2);
 };
 
 
