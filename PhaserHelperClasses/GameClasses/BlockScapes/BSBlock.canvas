@@ -1,0 +1,238 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "BSBlock",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Group",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.afterCreate();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "autoLoad": true,
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "9905a1c1-25f1-4800-97b7-d24a38d5503e",
+    "info": {
+      "editorName": "BSBlock",
+      "setAll": [],
+      "children": [{
+        "type": "group",
+        "id": "e7cb78b3-9966-40db-8d1e-023e9cc9cd23",
+        "info": {
+          "editorName": "group",
+          "setAll": [],
+          "children": [{
+            "type": "group",
+            "id": "fc0b7cf1-07f3-424f-ace9-f942b3153012",
+            "info": {
+              "editorName": "_visualsParent",
+              "editorField": true,
+              "setAll": [],
+              "children": [
+                {
+                  "type": "image",
+                  "id": "3522fe59-e82f-464e-900a-fb1690b57c74",
+                  "asset": "0",
+                  "info": {
+                    "editorName": "_baseSprite",
+                    "editorField": true,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "e4be2592-861e-4a54-9d6a-37eb335677e8",
+                  "asset": "1",
+                  "info": {
+                    "editorName": "_glowblock",
+                    "editorField": true,
+                    "editorShow": false,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "67fafade-ef7f-491b-bb96-f0577f9d7b55",
+                  "asset": "2",
+                  "info": {
+                    "editorName": "_highlight",
+                    "editorField": true,
+                    "editorShow": false,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "e93a6b45-ab31-40cd-8f33-f7a1fec40aa8",
+                  "asset": "3",
+                  "info": {
+                    "editorName": "_yellowHighlight",
+                    "editorField": true,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "image",
+                  "id": "84713985-cc3f-44dd-84a2-155a43f68310",
+                  "asset": "4",
+                  "info": {
+                    "editorName": "_redHighlight",
+                    "editorField": true,
+                    "editorShow": false,
+                    "x": -3,
+                    "anchor.x": 0.5,
+                    "anchor.y": 0.5
+                  }
+                },
+                {
+                  "type": "group",
+                  "id": "a083f85f-083e-4949-8e5d-2e20c545db8c",
+                  "info": {
+                    "editorName": "_faceParent",
+                    "editorField": true,
+                    "scale.x": 0.8,
+                    "scale.y": 0.8,
+                    "setAll": [],
+                    "children": [
+                      {
+                        "type": "image",
+                        "id": "cd26078a-8761-4dda-a626-55b1ec26ae46",
+                        "asset": "5",
+                        "info": {
+                          "editorName": "_faceVisual",
+                          "editorField": true,
+                          "anchor.x": 0.5,
+                          "anchor.y": 0.5
+                        }
+                      },
+                      {
+                        "type": "group",
+                        "id": "7b04ad3c-80ff-4df4-ab2a-e1ce19eb052d",
+                        "info": {
+                          "editorName": "_pupilParent",
+                          "editorField": true,
+                          "setAll": [],
+                          "children": [
+                            {
+                              "type": "image",
+                              "id": "843a154e-b6e8-4863-834b-116bb435024d",
+                              "asset": "6",
+                              "info": {
+                                "editorName": "_rightPupil",
+                                "editorField": true,
+                                "x": -24,
+                                "y": -1,
+                                "anchor.x": 0.5,
+                                "anchor.y": 0.5
+                              }
+                            },
+                            {
+                              "type": "image",
+                              "id": "3db7af81-4d11-4c79-b9c9-ac596595bd56",
+                              "asset": "6",
+                              "info": {
+                                "editorName": "_leftPupil",
+                                "editorField": true,
+                                "x": 17,
+                                "y": -1,
+                                "anchor.x": 0.5,
+                                "anchor.y": 0.5
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "image",
+                        "id": "e646ed72-5289-4b38-9fc5-4e9e3351e8cd",
+                        "asset": "7",
+                        "info": {
+                          "editorName": "_lids",
+                          "editorField": true,
+                          "editorShow": false,
+                          "anchor.x": 0.5,
+                          "anchor.y": 0.5
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }]
+        }
+      }]
+    }
+  },
+  "type": "GROUP",
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "Block_Yellow"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "Block_highlight"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "Block_glow"
+    },
+    "3": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "Nervous_overlay"
+    },
+    "4": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "Block_highlight_red"
+    },
+    "5": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "YELLOW_default"
+    },
+    "6": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "YELLOW_Pupil"
+    },
+    "7": {
+      "file": "WebContent/assets/pack.json",
+      "section": "playableAssets",
+      "asset": "YELLOW_default_lids"
+    }
+  },
+  "prefab-table": {}
+}

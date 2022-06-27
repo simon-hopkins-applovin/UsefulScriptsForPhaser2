@@ -5,7 +5,7 @@ function StateMachine(_states){
 	for(var i = 0; i< arguments.length; i++){
 		this.states[arguments[i]] = new State();
 		this.states[arguments[i]].enterFired = false;
-		this.states[arguments[i]].name = entry;
+		this.states[arguments[i]].name = arguments[i];
 	}
 	this.onUpdateSignal = new Phaser.Signal();
 	this.currentState = null;
@@ -37,8 +37,7 @@ StateMachine.prototype.initState = function(stateKey, onInit, onEnter, onExit, o
 	
 };
 
-StateMachine.prototype.changeState = function(stateKey, data){
-
+StateMachine.prototype.changeState = function(stateKey, data){	
 	
 	data = data==undefined?{}:data;
 	data.prevState = this.currentState;
@@ -47,14 +46,10 @@ StateMachine.prototype.changeState = function(stateKey, data){
 		this.currentState.enterFired = false;
 
 	}
-	if(!data.prevState){
-		this.currentState = this.states[stateKey];
-	}else{
-		this.currentState = this.states[this.getTransKey(data.prevState.name, stateKey)]?this.states[this.getTransKey(data.prevState.name, stateKey)]:this.states[stateKey];
-
+	this.currentState = this.states[stateKey];
+	if(!this.currentState){
+		console.error("UNKNOWN STATE: ", stateKey);
 	}
-	
-	
 	if(this.currentState.name != stateKey){
 		
 		this.currentState.onExit.addOnce(function(){
